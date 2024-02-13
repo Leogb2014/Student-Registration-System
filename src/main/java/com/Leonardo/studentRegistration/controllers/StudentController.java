@@ -1,7 +1,6 @@
 package com.Leonardo.studentRegistration.controllers;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -38,8 +37,8 @@ public class StudentController {
 	}
 	
 	@GetMapping(value="/{id}")
-	public ResponseEntity<Optional<Student>> findById(@PathVariable Long id){
-		Optional<Student> obj = service.findById(id);
+	public ResponseEntity<Student> findById(@PathVariable Long id){
+		Student obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
 	
